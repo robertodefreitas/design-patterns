@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+}
+
+group 'dp'
+version '1.0-SNAPSHOT'
+
+wrapper {
+    gradleVersion = '7.3'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:1.7.0'
+}
+
+test {
+    useJUnitPlatform()
+}
+
