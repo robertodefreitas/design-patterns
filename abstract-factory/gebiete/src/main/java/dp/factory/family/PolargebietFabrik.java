@@ -11,17 +11,18 @@ import dp.factory.product.Schnee;
 public class PolargebietFabrik implements AbstrakteGebietfabrik {
 
     @Override
+    //public Flechte createPflanze() { return new Flechte(); }
     public Pflanze createPflanze() {
         return new Flechte();
     }
 
     @Override
+    //public Eisbaer createTier() { return new Eisbaer(); }
     public Tier createTier() {
         return new Eisbaer();
     }
 
     @Override
-    public Untergrund createUntergrund() {
-        return new Schnee();
-    }
+    //public Schnee createUntergrund() { return new Schnee(); }
+    public Untergrund createUntergrund() { return new Schnee(); }
 }
