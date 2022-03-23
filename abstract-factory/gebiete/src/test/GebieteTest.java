@@ -1,13 +1,11 @@
-import family.PolargebietFabrik;
-import interfaces.AbstrakteGebietfabrik;
-import interfaces.Pflanze;
-import interfaces.Tier;
-import interfaces.Untergrund;
-import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import dp.factory.Gebiete;
+import dp.factory.family.PolargebietFabrik;
+import dp.factory.interfaces.AbstrakteGebietfabrik;
+import dp.factory.interfaces.Pflanze;
+import dp.factory.interfaces.Tier;
+import dp.factory.interfaces.Untergrund;
+import org.junit.jupiter.api.Test;
 
 public class GebieteTest {
     Gebiete gebiet = new Gebiete();

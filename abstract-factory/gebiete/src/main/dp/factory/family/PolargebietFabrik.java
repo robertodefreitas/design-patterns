@@ -1,12 +1,12 @@
-package family;
+package dp.factory.family;
 
-import interfaces.AbstrakteGebietfabrik;
-import interfaces.Pflanze;
-import interfaces.Tier;
-import interfaces.Untergrund;
-import product.Eisbaer;
-import product.Flechte;
-import product.Schnee;
+import dp.factory.interfaces.AbstrakteGebietfabrik;
+import dp.factory.interfaces.Pflanze;
+import dp.factory.interfaces.Tier;
+import dp.factory.interfaces.Untergrund;
+import dp.factory.product.Eisbaer;
+import dp.factory.product.Flechte;
+import dp.factory.product.Schnee;
 
 public class PolargebietFabrik implements AbstrakteGebietfabrik {
 

@@ -1,12 +1,12 @@
-package family;
+package dp.factory.family;
 
-import interfaces.AbstrakteGebietfabrik;
-import interfaces.Pflanze;
-import interfaces.Tier;
-import interfaces.Untergrund;
-import product.Baum;
-import product.Girafe;
-import product.Gras;
+import dp.factory.interfaces.AbstrakteGebietfabrik;
+import dp.factory.interfaces.Pflanze;
+import dp.factory.interfaces.Tier;
+import dp.factory.interfaces.Untergrund;
+import dp.factory.product.Baum;
+import dp.factory.product.Girafe;
+import dp.factory.product.Gras;
 
 public class RegenwaldFabrik implements AbstrakteGebietfabrik {
 

@@ -1,6 +1,6 @@
-package product;
+package dp.factory.product;
 
-import interfaces.Pflanze;
+import dp.factory.interfaces.Pflanze;
 
 public class Baum implements Pflanze {
     // die konkrete Pflanze "Baum"

@@ -1,4 +1,4 @@
-package interfaces;
+package dp.factory.interfaces;
 
 public interface AbstrakteGebietfabrik {
     Pflanze createPflanze();

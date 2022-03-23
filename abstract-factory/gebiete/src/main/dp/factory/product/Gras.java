@@ -1,6 +1,6 @@
-package product;
+package dp.factory.product;
 
-import interfaces.Untergrund;
+import dp.factory.interfaces.Untergrund;
 
 public class Gras implements Untergrund {
     // der konkrete Untergrund "Gras"

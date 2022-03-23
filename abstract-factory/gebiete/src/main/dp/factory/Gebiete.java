@@ -1,13 +1,14 @@
-import family.PolargebietFabrik;
-import interfaces.AbstrakteGebietfabrik;
-import interfaces.Pflanze;
+package dp.factory;
+
+import dp.factory.family.PolargebietFabrik;
+import dp.factory.interfaces.AbstrakteGebietfabrik;
 
 public class Gebiete {
 
     /**
-     * Von einer PolargebietFabrik alle Schritte ausführen lassen
+     * Von einer PolargebietFabrik alle Schritte ausfï¿½hren lassen
      */
-    Gebiete() {
+    public Gebiete() {
         AbstrakteGebietfabrik fabrik = new PolargebietFabrik();
         var pflanze = fabrik.createPflanze();
         var tier = fabrik.createTier();
