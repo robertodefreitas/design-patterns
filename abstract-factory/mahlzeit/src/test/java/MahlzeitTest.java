@@ -26,44 +26,48 @@ public class MahlzeitTest {
 
     @Test
     public void pizariaTest() throws Exception {
+        String methodeName = new Object(){}.getClass().getEnclosingMethod().getName();
         MahlzeitFabrik fabrik = createPizzeria();
-
-        Getraenk getraenkActual = fabrik.createGetraenk();
-        Vorspeise vorspeiseActual = fabrik.createVorspeise();
-        Hauptgericht hauptgerichtActual = fabrik.createHauptgericht();
 
         Getraenk getraenkExpected = new Wasser();
         Vorspeise vorspeiseExpected = new Salat();
         Hauptgericht hauptgerichtExpected = new Pizza();
 
-        //System.out.println("RESULT: " + getraenkActual.getClass());
+        Getraenk getraenkActual = fabrik.createGetraenk();
+        Vorspeise vorspeiseActual = fabrik.createVorspeise();
+        Hauptgericht hauptgerichtActual = fabrik.createHauptgericht();
+
+        System.out.println("=== [" + methodeName + "] ===");
+        getraenkActual.kuehlen();
 
         Assertions.assertFalse(getraenkExpected.equals(getraenkActual));
-
         Assertions.assertEquals(getraenkExpected.getClass(), getraenkActual.getClass());
         Assertions.assertEquals(vorspeiseExpected.getClass(), vorspeiseActual.getClass());
         Assertions.assertEquals(hauptgerichtExpected.getClass(), hauptgerichtActual.getClass());
+        System.out.println("");
     }
 
     @Test
     public void restaurantTest() throws Exception {
+        String methodeName = new Object(){}.getClass().getEnclosingMethod().getName();
         MahlzeitFabrik fabrik = createRestaurant();
-
-        Getraenk getraenkActual = fabrik.createGetraenk();
-        Vorspeise vorspeiseActual = fabrik.createVorspeise();
-        Hauptgericht hauptgerichtActual = fabrik.createHauptgericht();
 
         Getraenk getraenkExpected = new Saft();
         Vorspeise vorspeiseExpected = new Suppe();
         Hauptgericht hauptgerichtExpected = new Kartoffelgratin();
 
-        //System.out.println("RESULT: " + getraenkActual.getClass());
+        Getraenk getraenkActual = fabrik.createGetraenk();
+        Vorspeise vorspeiseActual = fabrik.createVorspeise();
+        Hauptgericht hauptgerichtActual = fabrik.createHauptgericht();
+
+        System.out.println("=== [" + methodeName + "] ===");
+        getraenkActual.kuehlen();
 
         Assertions.assertFalse(getraenkExpected.equals(getraenkActual));
-
         Assertions.assertEquals(getraenkExpected.getClass(), getraenkActual.getClass());
         Assertions.assertEquals(vorspeiseExpected.getClass(), vorspeiseActual.getClass());
         Assertions.assertEquals(hauptgerichtExpected.getClass(), hauptgerichtActual.getClass());
+        System.out.println("");
     }
 
 }

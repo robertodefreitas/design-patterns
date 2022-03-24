@@ -4,22 +4,27 @@ hide members
 show methods
 hide CLIENT methods
 hide CLIENT circle
+'skinparam classFontColor automatic
+'skinparam classHeaderBackgroundColor #444
+'skinparam minClassWidth 100
+'skinparam nodesep 50
+'skinparam ranksep 100
 
-interface MahlzeitFabrik <<abstract>> #aliceblue;line:blue;line.dotted;text:blue {
+interface MahlzeitFabrik <<abstract>> #d3dff7;line:blue;line.dotted;text:blue {
 {abstract} createGetraenk();
 {abstract} createVorspeise();
 {abstract} createHauptgericht(); 
 }
 
-interface Getraenk <<abstract>> #PaleGreen;line:green;line.dotted;text:green {
+interface Getraenk <<abstract>> #D1EEE1;line:green;line.dotted;text:green {
 {abstract} kuehlen()
 }
 
-interface Vorspeise <<abstract>> #PaleGreen;line:green;line.dotted;text:green {
+interface Vorspeise <<abstract>> #D1EEE1;line:green;line.dotted;text:green {
 {abstract} schnellVorbereiten()
 }
 
-interface Hauptgericht <<abstract>> #PaleGreen;line:green;line.dotted;text:green {
+interface Hauptgericht <<abstract>> #D1EEE1;line:green;line.dotted;text:green {
 {abstract} warmHalten()
 }
 
@@ -30,7 +35,7 @@ createVorspeise();
 createHauptgericht(); 
 }
 
-class RestaurantFabrik implements MahlzeitFabrik {
+class RestaurantFabrik #feff65 implements MahlzeitFabrik {
 createGetraenk();
 createVorspeise();
 createHauptgericht(); 
@@ -41,7 +46,7 @@ class Wasser implements Getraenk {
 kuehlen()
 }
 
-class Saft implements Getraenk {
+class Saft #feff65 implements Getraenk {
 kuehlen()
 }
 
@@ -49,7 +54,7 @@ class Salat implements Vorspeise {
 schnellVorbereiten()
 }
 
-class Suppe implements Vorspeise {
+class Suppe #feff65 implements Vorspeise {
 schnellVorbereiten()
 }
 
@@ -57,17 +62,19 @@ class Pizza implements Hauptgericht {
 warmHalten()
 }
 
-class Kartoffelgratin implements Hauptgericht {
+class Kartoffelgratin #feff65 implements Hauptgericht {
 warmHalten()
 }
 
 
 class CLIENT #pink;line:red;line.bold;text:red
 
+'PizzeriaFabrik ..|> MahlzeitFabrik
 PizzeriaFabrik -[dotted]-> Wasser : <<create>>
 PizzeriaFabrik -[dotted]-> Salat : <<create>>
 PizzeriaFabrik -[dotted]-> Pizza : <<create>>
 
+'RestaurantFabrik ..|> MahlzeitFabrik
 RestaurantFabrik -[dotted]-> Saft : <<create>>
 RestaurantFabrik -[dotted]-> Suppe : <<create>>
 RestaurantFabrik -[dotted]-> Kartoffelgratin : <<create>>
