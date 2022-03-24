@@ -36,7 +36,7 @@ public class MahlzeitTest {
         Vorspeise vorspeiseExpected = new Salat();
         Hauptgericht hauptgerichtExpected = new Pizza();
 
-        //System.out.println("RESULT: " + pflanzeActual.getClass());
+        //System.out.println("RESULT: " + getraenkActual.getClass());
 
         Assertions.assertFalse(getraenkExpected.equals(getraenkActual));
 
@@ -57,7 +57,7 @@ public class MahlzeitTest {
         Vorspeise vorspeiseExpected = new Suppe();
         Hauptgericht hauptgerichtExpected = new Kartoffelgratin();
 
-        //System.out.println("RESULT: " + pflanzeActual.getClass());
+        //System.out.println("RESULT: " + getraenkActual.getClass());
 
         Assertions.assertFalse(getraenkExpected.equals(getraenkActual));
 
