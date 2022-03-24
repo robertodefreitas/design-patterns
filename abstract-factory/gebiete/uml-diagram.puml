@@ -1,0 +1,81 @@
+@startuml
+'skinparam groupInheritance 2
+hide members
+show methods
+hide CLIENT methods
+hide CLIENT circle
+
+interface AbstrakteGebietfabrik <<abstract>> #aliceblue;line:blue;line.dotted;text:blue {
+{abstract} createPflanze();
+{abstract} createTier();
+{abstract} createUntergrund(); 
+}
+
+interface Pflanze <<abstract>> #PaleGreen;line:green;line.dotted;text:green {
+{abstract} giessen()
+}
+
+interface Tier <<abstract>> #PaleGreen;line:green;line.dotted;text:green {
+{abstract} fuettern()
+}
+
+interface Untergrund <<abstract>> #PaleGreen;line:green;line.dotted;text:green {
+{abstract} einebnen()
+}
+
+
+class PolargebietFabrik implements AbstrakteGebietfabrik {
+createPflanze();
+createTier();
+createUntergrund(); 
+}
+
+class RegenwaldFabrik implements AbstrakteGebietfabrik {
+createPflanze();
+createTier();
+createUntergrund(); 
+}
+
+
+class Flechte implements Pflanze {
+giessen()
+}
+
+class Baum implements Pflanze {
+giessen()
+}
+
+class Eisbaer implements Tier {
+fuettern()
+}
+
+class Girafe implements Tier {
+fuettern()
+}
+
+class Schnee implements Untergrund {
+einebnen()
+}
+
+class Gras implements Untergrund {
+einebnen()
+}
+
+
+class CLIENT #pink;line:red;line.bold;text:red
+
+PolargebietFabrik -[dotted]-> Flechte : <<create>>
+PolargebietFabrik -[dotted]-> Eisbaer : <<create>>
+PolargebietFabrik -[dotted]-> Schnee : <<create>>
+
+RegenwaldFabrik -[dotted]-> Baum : <<create>>
+RegenwaldFabrik -[dotted]-> Girafe : <<create>>
+RegenwaldFabrik -[dotted]-> Gras : <<create>>
+
+CLIENT -[dotted]-> AbstrakteGebietfabrik
+CLIENT -[dotted]-> Pflanze
+CLIENT -[dotted]-> Tier
+CLIENT -[dotted]-> Untergrund
+
+@enduml
+

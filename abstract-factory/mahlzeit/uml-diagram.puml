@@ -1,0 +1,80 @@
+@startuml
+'skinparam groupInheritance 2
+hide members
+show methods
+hide CLIENT methods
+hide CLIENT circle
+
+interface MahlzeitFabrik <<abstract>> #aliceblue;line:blue;line.dotted;text:blue {
+{abstract} createGetraenk();
+{abstract} createVorspeise();
+{abstract} createHauptgericht(); 
+}
+
+interface Getraenk <<abstract>> #PaleGreen;line:green;line.dotted;text:green {
+{abstract} kuehlen()
+}
+
+interface Vorspeise <<abstract>> #PaleGreen;line:green;line.dotted;text:green {
+{abstract} schnellVorbereiten()
+}
+
+interface Hauptgericht <<abstract>> #PaleGreen;line:green;line.dotted;text:green {
+{abstract} warmHalten()
+}
+
+
+class PizzeriaFabrik implements MahlzeitFabrik {
+createGetraenk();
+createVorspeise();
+createHauptgericht(); 
+}
+
+class RestaurantFabrik implements MahlzeitFabrik {
+createGetraenk();
+createVorspeise();
+createHauptgericht(); 
+}
+
+
+class Wasser implements Getraenk {
+kuehlen()
+}
+
+class Saft implements Getraenk {
+kuehlen()
+}
+
+class Salat implements Vorspeise {
+schnellVorbereiten()
+}
+
+class Suppe implements Vorspeise {
+schnellVorbereiten()
+}
+
+class Pizza implements Hauptgericht {
+warmHalten()
+}
+
+class Kartoffelgratin implements Hauptgericht {
+warmHalten()
+}
+
+
+class CLIENT #pink;line:red;line.bold;text:red
+
+PizzeriaFabrik -[dotted]-> Wasser : <<create>>
+PizzeriaFabrik -[dotted]-> Salat : <<create>>
+PizzeriaFabrik -[dotted]-> Pizza : <<create>>
+
+RestaurantFabrik -[dotted]-> Saft : <<create>>
+RestaurantFabrik -[dotted]-> Suppe : <<create>>
+RestaurantFabrik -[dotted]-> Kartoffelgratin : <<create>>
+
+CLIENT -[dotted]-> MahlzeitFabrik
+CLIENT -[dotted]-> Getraenk
+CLIENT -[dotted]-> Vorspeise
+CLIENT -[dotted]-> Hauptgericht
+
+@enduml
