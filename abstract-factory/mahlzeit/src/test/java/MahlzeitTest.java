@@ -11,21 +11,12 @@ import org.junit.jupiter.api.Test;
 
 public class MahlzeitTest {
 
-    public MahlzeitFabrik createPizzeria() {
-        MahlzeitFabrik fabrik = new PizzeriaFabrik();
-        return fabrik;
-    }
-
-    public MahlzeitFabrik createRestaurant() {
-        MahlzeitFabrik fabrik = new RestaurantFabrik();
-        return fabrik;
-    }
-
-
-    /* TESTS */
+    /**
+     * TESTS
+     */
 
     @Test
-    public void pizariaTest() throws Exception {
+    public void pizzeriaTest() throws Exception {
         String methodeName = new Object(){}.getClass().getEnclosingMethod().getName();
         MahlzeitFabrik fabrik = createPizzeria();
 
@@ -33,18 +24,7 @@ public class MahlzeitTest {
         Vorspeise vorspeiseExpected = new Salat();
         Hauptgericht hauptgerichtExpected = new Pizza();
 
-        Getraenk getraenkActual = fabrik.createGetraenk();
-        Vorspeise vorspeiseActual = fabrik.createVorspeise();
-        Hauptgericht hauptgerichtActual = fabrik.createHauptgericht();
-
-        System.out.println("=== [" + methodeName + "] ===");
-        getraenkActual.kuehlen();
-
-        Assertions.assertFalse(getraenkExpected.equals(getraenkActual));
-        Assertions.assertEquals(getraenkExpected.getClass(), getraenkActual.getClass());
-        Assertions.assertEquals(vorspeiseExpected.getClass(), vorspeiseActual.getClass());
-        Assertions.assertEquals(hauptgerichtExpected.getClass(), hauptgerichtActual.getClass());
-        System.out.println("");
+        testTemplate(methodeName, fabrik, getraenkExpected, vorspeiseExpected, hauptgerichtExpected);
     }
 
     @Test
@@ -56,12 +36,36 @@ public class MahlzeitTest {
         Vorspeise vorspeiseExpected = new Suppe();
         Hauptgericht hauptgerichtExpected = new Kartoffelgratin();
 
+        testTemplate(methodeName, fabrik, getraenkExpected, vorspeiseExpected, hauptgerichtExpected);
+    }
+
+
+    /**
+     * METHODEN
+     */
+
+    static public MahlzeitFabrik createPizzeria() {
+        MahlzeitFabrik fabrik = new PizzeriaFabrik();
+        return fabrik;
+    }
+
+    static public MahlzeitFabrik createRestaurant() {
+        MahlzeitFabrik fabrik = new RestaurantFabrik();
+        return fabrik;
+    }
+
+
+    public void testTemplate(String methodeName, MahlzeitFabrik fabrik, Getraenk getraenkExpected, Vorspeise vorspeiseExpected, Hauptgericht hauptgerichtExpected) throws Exception {
+        //String methodeName = new Object(){}.getClass().getEnclosingMethod().getName();
+
         Getraenk getraenkActual = fabrik.createGetraenk();
         Vorspeise vorspeiseActual = fabrik.createVorspeise();
         Hauptgericht hauptgerichtActual = fabrik.createHauptgericht();
 
         System.out.println("=== [" + methodeName + "] ===");
         getraenkActual.kuehlen();
+        vorspeiseActual.schnellVorbereiten();
+        hauptgerichtActual.warmLiefern();
 
         Assertions.assertFalse(getraenkExpected.equals(getraenkActual));
         Assertions.assertEquals(getraenkExpected.getClass(), getraenkActual.getClass());
@@ -69,5 +73,4 @@ public class MahlzeitTest {
         Assertions.assertEquals(hauptgerichtExpected.getClass(), hauptgerichtActual.getClass());
         System.out.println("");
     }
-
 }

@@ -9,6 +9,7 @@ import dp.factory.product.Salat;
 import dp.factory.product.Wasser;
 
 public class PizzeriaFabrik implements MahlzeitFabrik {
+    // eine konkrete Familie/Fabrik
 
     @Override
     //public Wasser createGetraenke() { return new Wasser(); }

@@ -4,7 +4,7 @@ import dp.factory.interfaces.Getraenk;
 
 public class Wasser implements Getraenk {
     // ein konkretes Getränk
-    String className = Wasser.class.getCanonicalName();
+    String className = getClass().getCanonicalName();
 
     @Override
     public void kuehlen(){
