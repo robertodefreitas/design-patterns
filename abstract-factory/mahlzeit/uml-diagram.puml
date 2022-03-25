@@ -25,7 +25,7 @@ interface Vorspeise <<abstract>> #D1EEE1;line:green;line.dotted;text:green {
 }
 
 interface Hauptgericht <<abstract>> #D1EEE1;line:green;line.dotted;text:green {
-{abstract} warmHalten()
+{abstract} warmLiefern()
 }
 
 
@@ -59,11 +59,11 @@ schnellVorbereiten()
 }
 
 class Pizza implements Hauptgericht {
-warmHalten()
+warmLiefern()
 }
 
 class Kartoffelgratin #feff65 implements Hauptgericht {
-warmHalten()
+warmLiefern()
 }
 
 
