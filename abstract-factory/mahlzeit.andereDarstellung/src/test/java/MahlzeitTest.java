@@ -33,7 +33,8 @@ public class MahlzeitTest {
         MahlzeitFabrik fabrik = createRestaurant();
 
         Getraenk getraenkExpected = new Saft();
-        Vorspeise vorspeiseExpected = new Suppe();
+        //Vorspeise vorspeiseExpected = new Suppe();
+        Vorspeise vorspeiseExpected = new Salat();
         Hauptgericht hauptgerichtExpected = new Kartoffelgratin();
 
         testTemplate(methodeName, fabrik, getraenkExpected, vorspeiseExpected, hauptgerichtExpected);

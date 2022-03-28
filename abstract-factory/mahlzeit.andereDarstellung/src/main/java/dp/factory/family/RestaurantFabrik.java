@@ -6,6 +6,7 @@ import dp.factory.interfaces.Vorspeise;
 import dp.factory.interfaces.Hauptgericht;
 import dp.factory.product.Kartoffelgratin;
 import dp.factory.product.Saft;
+import dp.factory.product.Salat;
 import dp.factory.product.Suppe;
 
 public class RestaurantFabrik implements MahlzeitFabrik {
@@ -17,8 +18,9 @@ public class RestaurantFabrik implements MahlzeitFabrik {
     }
 
     @Override
+    //public Vorspeise createVorspeise() { return new Suppe(); }
     public Vorspeise createVorspeise() {
-        return new Suppe();
+        return new Salat();
     }
 
     @Override
