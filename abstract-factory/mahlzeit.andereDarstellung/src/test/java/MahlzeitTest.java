@@ -1,14 +1,11 @@
 
-import dp.factory.pizzeria.Pizza;
-import dp.factory.pizzeria.PizzeriaFabrik;
-import dp.factory.pizzeria.Salat;
-import dp.factory.pizzeria.Wasser;
-import dp.factory.restaurant.RestaurantFabrik;
+import dp.factory.family.PizzeriaFabrik;
+import dp.factory.family.RestaurantFabrik;
 import dp.factory.interfaces.MahlzeitFabrik;
 import dp.factory.interfaces.Getraenk;
 import dp.factory.interfaces.Vorspeise;
 import dp.factory.interfaces.Hauptgericht;
-import dp.factory.restaurant.*;
+import dp.factory.product.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
