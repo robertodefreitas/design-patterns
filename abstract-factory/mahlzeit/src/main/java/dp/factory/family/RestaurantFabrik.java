@@ -25,4 +25,21 @@ public class RestaurantFabrik implements MahlzeitFabrik {
     public Hauptgericht createHauptgericht() {
         return new Kartoffelgratin();
     }
+
+
+
+//    @Override
+//    public Saft createGetraenk() {
+//        return new Saft();
+//    }
+//
+//    @Override
+//    public Suppe createVorspeise() {
+//        return new Suppe();
+//    }
+//
+//    @Override
+//    public Kartoffelgratin createHauptgericht() {
+//        return new Kartoffelgratin();
+//    }
 }

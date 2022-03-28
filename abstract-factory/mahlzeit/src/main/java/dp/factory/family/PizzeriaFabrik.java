@@ -12,18 +12,33 @@ public class PizzeriaFabrik implements MahlzeitFabrik {
     // eine konkrete Familie/Fabrik
 
     @Override
-    //public Wasser createGetraenke() { return new Wasser(); }
     public Getraenk createGetraenk() {
         return new Wasser();
     }
 
     @Override
-    //public Salat createVorspeise() { return new Salat(); }
     public Vorspeise createVorspeise() {
         return new Salat();
     }
 
     @Override
-    //public Pizza createHauptgericht() { return new Pizza(); }
-    public Hauptgericht createHauptgericht() { return new Pizza(); }
+    public Hauptgericht createHauptgericht() {
+        return new Pizza();
+    }
+
+
+//    @Override
+//    public Wasser createGetraenk() {
+//        return new Wasser();
+//    }
+//
+//    @Override
+//    public Salat createVorspeise() {
+//        return new Salat();
+//    }
+//
+//    @Override
+//    public Pizza createHauptgericht() {
+//        return new Pizza();
+//    }
 }
