@@ -1,6 +1,10 @@
 @startuml
 'skinparam groupInheritance 2
 hide members
+'hide empty fields
+'hide circle
+'show methods
+'show attributes
 show methods
 hide CLIENT methods
 hide CLIENT circle
