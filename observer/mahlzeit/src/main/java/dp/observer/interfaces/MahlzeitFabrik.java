@@ -13,7 +13,7 @@ public interface MahlzeitFabrik {
     /**
      * Observer/Beobachter Methoden: PUSH
      */
-    void addHauptgericht(Hauptgericht hauptgericht);
+    void beobachterBenachrichtigen(Hauptgericht hauptgericht);
     void addHauptgerichtObserver(HauptgerichtObserver hauptgerichtObserver);
     void removeHauptgerichtObserver(HauptgerichtObserver hauptgerichtObserver);
 

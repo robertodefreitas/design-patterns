@@ -30,10 +30,10 @@ public class RestaurantFabrik implements MahlzeitFabrik {
      * Hier wird das Gericht zu dem Beobachter gesendet, gepusht!
      */
     @Override
-    public void addHauptgericht(Hauptgericht hauptgericht) {
+    public void beobachterBenachrichtigen(Hauptgericht hauptgericht) {
         hauptgerichtList.add(hauptgericht);
         hauptgerichtObserverList.forEach((hauptgerichtObserverTmp) -> {
-            hauptgerichtObserverTmp.hauptgerichtIstFertig(hauptgericht);
+            hauptgerichtObserverTmp.benachrichtigungBearbeiten(hauptgericht);
         });
     }
 

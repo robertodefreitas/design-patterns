@@ -21,7 +21,7 @@ public class Kellner implements HauptgerichtObserver {
     }
 
     @Override
-    public void hauptgerichtIstFertig(Hauptgericht hauptgericht) {
+    public void benachrichtigungBearbeiten(Hauptgericht hauptgericht) {
         String simpleName = getClass().getSimpleName();
         String meldung = simpleName + " " + name + " wurde informiert wegen " + hauptgericht.getClass().getSimpleName() + " ID: " + hauptgericht.getId();
         System.out.println(meldung);

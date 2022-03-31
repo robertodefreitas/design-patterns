@@ -17,7 +17,10 @@ hide CLIENT circle
 interface MahlzeitFabrik <<abstract>> #d3dff7;line:blue;line.dotted;text:blue {
 {abstract} createGetraenk();
 {abstract} createVorspeise();
-{abstract} createHauptgericht(); 
+{abstract} createHauptgericht(id); 
+{abstract} beobachterBenachrichtigen(hauptgericht);
+{abstract} addHauptgerichtObserver(hauptgerichtObserver);
+{abstract} removeHauptgerichtObserver(hauptgerichtObserver);
 }
 
 interface Getraenk <<abstract>> #D1EEE1;line:green;line.dotted;text:green {
@@ -32,17 +35,29 @@ interface Hauptgericht <<abstract>> #D1EEE1;line:green;line.dotted;text:green {
 {abstract} warmLiefern()
 }
 
+interface HauptgerichtObserver <<abstract>> #ffab40;line:green;line.dotted;text:black {
+{abstract} getName();
+{abstract} setName(name);
+{abstract} benachrichtigungBearbeiten(hauptgericht);
+}
+
 
 class PizzeriaFabrik implements MahlzeitFabrik {
 createGetraenk();
 createVorspeise();
-createHauptgericht(); 
+createHauptgericht();
+beobachterBenachrichtigen(hauptgericht);
+addHauptgerichtObserver(hauptgerichtObserver);
+removeHauptgerichtObserver(hauptgerichtObserver);
 }
 
 class RestaurantFabrik #feff65 implements MahlzeitFabrik {
 createGetraenk();
 createVorspeise();
-createHauptgericht(); 
+createHauptgericht();
+beobachterBenachrichtigen(hauptgericht);
+addHauptgerichtObserver(hauptgerichtObserver);
+removeHauptgerichtObserver(hauptgerichtObserver);
 }
 
 
@@ -70,18 +85,37 @@ class Kartoffelgratin #feff65 implements Hauptgericht {
 warmLiefern()
 }
 
+class Schankkellner implements HauptgerichtObserver {
+getName();
+setName(name);
+benachrichtigungBearbeiten(hauptgericht);
+}
+
+class Kellner #feff65 implements HauptgerichtObserver {
+getName();
+setName(name);
+benachrichtigungBearbeiten(hauptgericht);
+}
+
+class Bueffetier #feff65 implements HauptgerichtObserver {
+getName();
+setName(name);
+benachrichtigungBearbeiten(hauptgericht);
+}
 
 class CLIENT #pink;line:red;line.bold;text:red
 
 'PizzeriaFabrik ..|> MahlzeitFabrik
-PizzeriaFabrik -[dotted]-> Wasser : <<create>>
-PizzeriaFabrik -[dotted]-> Salat : <<create>>
+PizzeriaFabrik -left[dotted]-> Wasser : <<create>>
+PizzeriaFabrik -left[dotted]-> Salat : <<create>>
 PizzeriaFabrik -[dotted]-> Pizza : <<create>>
+PizzeriaFabrik "1" -[dotted]-> "0..*" HauptgerichtObserver : PUSH
 
 'RestaurantFabrik ..|> MahlzeitFabrik
-RestaurantFabrik -[dotted]-> Saft : <<create>>
-RestaurantFabrik -[dotted]-> Suppe : <<create>>
+RestaurantFabrik -left[dotted]-> Saft : <<create>>
+RestaurantFabrik -left[dotted]-> Suppe : <<create>>
 RestaurantFabrik -[dotted]-> Kartoffelgratin : <<create>>
+RestaurantFabrik "1" -[dotted]-> "0..*" HauptgerichtObserver : PUSH
 
 CLIENT -[dotted]-> MahlzeitFabrik
 CLIENT -[dotted]-> Getraenk

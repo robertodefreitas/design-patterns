@@ -75,7 +75,7 @@ public class Demo {
 
         Hauptgericht gericht1 = fabrik.createHauptgericht(generateId());
         gericht1.warmLiefern();
-        fabrik.addHauptgericht(gericht1);
+        fabrik.beobachterBenachrichtigen(gericht1);
 
         System.out.println("");
 
@@ -83,7 +83,7 @@ public class Demo {
 
         Hauptgericht gericht2 = fabrik.createHauptgericht(generateId());
         gericht2.warmLiefern();
-        fabrik.addHauptgericht(gericht2);
+        fabrik.beobachterBenachrichtigen(gericht2);
 
         System.out.println("");
 
@@ -91,7 +91,7 @@ public class Demo {
 
         Hauptgericht gericht3 = fabrik.createHauptgericht(generateId());
         gericht3.warmLiefern();
-        fabrik.addHauptgericht(gericht3);
+        fabrik.beobachterBenachrichtigen(gericht3);
 
         System.out.println("");
     }
