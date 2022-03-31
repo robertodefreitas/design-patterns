@@ -1,0 +1,89 @@
+@startuml
+'skinparam groupInheritance 2
+hide members
+'hide empty fields
+'hide circle
+'show methods
+'show attributes
+show methods
+hide CLIENT methods
+hide CLIENT circle
+'skinparam classFontColor automatic
+'skinparam classHeaderBackgroundColor #444
+'skinparam minClassWidth 100
+'skinparam nodesep 50
+'skinparam ranksep 100
+
+interface MahlzeitFabrik <<abstract>> #d3dff7;line:blue;line.dotted;text:blue {
+{abstract} createHauptgericht(id); 
+{abstract} beobachterBenachrichtigen(hauptgericht);
+{abstract} addHauptgerichtObserver(hauptgerichtObserver);
+{abstract} removeHauptgerichtObserver(hauptgerichtObserver);
+}
+
+interface Hauptgericht <<abstract>> #D1EEE1;line:green;line.dotted;text:green {
+{abstract} warmLiefern()
+}
+
+interface HauptgerichtObserver <<abstract>> #ffab40;line:green;line.dotted;text:black {
+{abstract} getName();
+{abstract} setName(name);
+{abstract} benachrichtigungBearbeiten(hauptgericht);
+}
+
+
+class PizzeriaFabrik implements MahlzeitFabrik {
+createHauptgericht();
+beobachterBenachrichtigen(hauptgericht);
+addHauptgerichtObserver(hauptgerichtObserver);
+removeHauptgerichtObserver(hauptgerichtObserver);
+}
+
+class RestaurantFabrik #feff65 implements MahlzeitFabrik {
+createHauptgericht();
+beobachterBenachrichtigen(hauptgericht);
+addHauptgerichtObserver(hauptgerichtObserver);
+removeHauptgerichtObserver(hauptgerichtObserver);
+}
+
+
+class Pizza implements Hauptgericht {
+warmLiefern()
+}
+
+class Kartoffelgratin #feff65 implements Hauptgericht {
+warmLiefern()
+}
+
+class Schankkellner implements HauptgerichtObserver {
+getName();
+setName(name);
+benachrichtigungBearbeiten(hauptgericht);
+}
+
+class Kellner #feff65 implements HauptgerichtObserver {
+getName();
+setName(name);
+benachrichtigungBearbeiten(hauptgericht);
+}
+
+class Bueffetier #feff65 implements HauptgerichtObserver {
+getName();
+setName(name);
+benachrichtigungBearbeiten(hauptgericht);
+}
+
+class CLIENT #pink;line:red;line.bold;text:red
+
+'PizzeriaFabrik ..|> MahlzeitFabrik
+PizzeriaFabrik -[dotted]-> Pizza : <<create>>
+PizzeriaFabrik "1" -[dotted]-> "0..*" HauptgerichtObserver : PUSH
+
+'RestaurantFabrik ..|> MahlzeitFabrik
+RestaurantFabrik -[dotted]-> Kartoffelgratin : <<create>>
+RestaurantFabrik "1" -[dotted]-> "0..*" HauptgerichtObserver : PUSH
+
+CLIENT -[dotted]-> MahlzeitFabrik
+CLIENT -[dotted]-> Hauptgericht
+
+@enduml
