@@ -33,18 +33,32 @@ public class PizzeriaFabrik implements MahlzeitFabrik {
     @Override
     public void beobachterBenachrichtigen(Hauptgericht hauptgericht) {
         hauptgerichtList.add(hauptgericht);
-        hauptgerichtObserverList.forEach((hauptgerichtObserverTmp) -> {
+        /**
+         * mit for-Schleife
+         */
+        for(HauptgerichtObserver hauptgerichtObserverTmp:hauptgerichtObserverList) {
             hauptgerichtObserverTmp.benachrichtigungBearbeiten(hauptgericht);
-        });
+        }
+
+        /**
+         * mit Lambda
+         */
+//        hauptgerichtObserverList.forEach((hauptgerichtObserverTmp) -> {
+//            hauptgerichtObserverTmp.benachrichtigungBearbeiten(hauptgericht);
+//        });
     }
 
     @Override
     public void addHauptgerichtObserver(HauptgerichtObserver hauptgerichtObserver) {
         hauptgerichtObserverList.add(hauptgerichtObserver);
+        System.out.println(hauptgerichtObserver.getName() + " beobachtet ab jetzt alle neue Hauptgerichte");
+        System.out.println("");
     }
 
     @Override
     public void removeHauptgerichtObserver(HauptgerichtObserver hauptgerichtObserver) {
         hauptgerichtObserverList.remove(hauptgerichtObserver);
+        System.out.println(hauptgerichtObserver.getName() + " beobachtet nicht mehr die neue Hauptgerichte.");
+        System.out.println("");
     }
 }
