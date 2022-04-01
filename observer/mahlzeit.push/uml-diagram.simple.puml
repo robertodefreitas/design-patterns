@@ -83,7 +83,7 @@ PizzeriaFabrik "1" -[dotted]-> "0..*" HauptgerichtObserver : PUSH
 RestaurantFabrik -[dotted]-> Kartoffelgratin : <<create>>
 RestaurantFabrik "1" -[dotted]-> "0..*" HauptgerichtObserver : PUSH
 
-CLIENT -[dotted]-> MahlzeitFabrik
+CLIENT -right[dotted]-> MahlzeitFabrik
 CLIENT -[dotted]-> Hauptgericht
 
 @enduml

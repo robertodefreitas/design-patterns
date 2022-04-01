@@ -117,7 +117,7 @@ RestaurantFabrik -left[dotted]-> Suppe : <<create>>
 RestaurantFabrik -[dotted]-> Kartoffelgratin : <<create>>
 RestaurantFabrik "1" -[dotted]-> "0..*" HauptgerichtObserver : PUSH
 
-CLIENT -[dotted]-> MahlzeitFabrik
+CLIENT -left[dotted]-> MahlzeitFabrik
 CLIENT -[dotted]-> Getraenk
 CLIENT -[dotted]-> Vorspeise
 CLIENT -[dotted]-> Hauptgericht
