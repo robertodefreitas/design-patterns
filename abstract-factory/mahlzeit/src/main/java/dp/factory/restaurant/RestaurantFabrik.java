@@ -27,7 +27,6 @@ public class RestaurantFabrik implements MahlzeitFabrik {
     }
 
 
-
 //    @Override
 //    public Saft createGetraenk() {
 //        return new Saft();
